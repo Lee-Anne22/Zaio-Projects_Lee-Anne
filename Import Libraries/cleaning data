@@ -1,0 +1,26 @@
+# Import Libraries
+import pandas as pd
+import numpy as np
+#cleaning data
+data={
+    'Name':['Alice','Bob','Charlie','David'],
+    'Age':[23,np.nan,35,40],
+    'Subject':['Maths', 'English','Maths','Geography'],
+    'Score':[88,98,None,78]
+}
+data_df=pd.DataFrame(data)
+print(data_df)
+
+#Cleaning method
+clean_df=data_df.dropna()
+print("\n After droppping rows the NANs:")
+print(clean_df)
+
+#Filling missing values
+filled_df=data_df.fillna({
+    'Name':'Unknown',
+    'Age':0,
+    'Score':0
+})
+print("\n After filling NaNs:")
+print(filled_df)
